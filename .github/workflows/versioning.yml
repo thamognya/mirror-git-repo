@@ -1,16 +1,17 @@
-name: Keep the major version tag up-to-date
-
+name: "auto release"
 on:
-  release:
-    types: [published, edited]
-
-concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: false
-
+  push:
+    tags:
+      - "*"
 jobs:
-  update-major-tag:
-    runs-on: ubuntu-latest
-
+  tagged-release:
+    name: "Tagged Release"
+    runs-on: "ubuntu-latest"
     steps:
-      - uses: Actions-R-Us/actions-tagger@v2
+      - name: "Build & test"
+        run: |
+          echo "done!"
+      - uses: "marvinpinto/action-automatic-releases@latest"
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          prerelease: false
