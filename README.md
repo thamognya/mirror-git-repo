@@ -58,4 +58,8 @@ docker run --rm -e "SSH_PRIVATE_KEY=$(cat ~/.ssh/id_rsa)" $(docker build -q .) "
 
 ## License
 
+This work is dual-licensed under MIT and GPL 3.0 (or any later version). You have to comply to both of them if you want to use this work.
 
+`SPDX-License-Identifier: MIT AND GPL-3.0-or-later`
+
+You can find the licenses in the licenses folder.
