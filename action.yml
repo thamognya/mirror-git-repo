@@ -1,4 +1,4 @@
-name: 'mirror-git-repo'
+name: 'git-mirror'
 author: 'Thamognya Kodi'
 description: 'Action for mirroring a repository in another location using SSH.'
 branding:
