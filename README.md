@@ -28,25 +28,27 @@ If you added the private key or known hosts in an [environment](https://docs.git
 ## Example workflow
 
 ```yml
-name: Mirror to Bitbucket Repo
+name: mirror to repo
 
-on: [ push, delete, create ]
+on: 
+  schedule:
+  - cron: '*/5 * * * *'
 
 # Ensures that only one mirror task will run at a time.
 concurrency:
-  group: git-mirror
+  group: mirror-git-repo
 
 jobs:
-  git-mirror:
+  mirror-git-repo:
     runs-on: ubuntu-latest
     steps:
-      - uses: ThamognyaKodi/git-mirror@0.0.1
+      - uses: ThamognyaKodi/mirror-git-repo@0.0.1
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
           SSH_KNOWN_HOSTS: ${{ secrets.SSH_KNOWN_HOSTS }}
         with:
-          source-repo: "git@github.com:wearerequired/git-mirror-action.git"
-          destination-repo: "git@bitbucket.org:wearerequired/git-mirror-action.git"
+          source-repo: "git@_some_provider_:_user_name_/_repo_name_.git"
+          destination-repo: "git@_some_provider_which_you_have_ssh_access_:_user_name_/_repo_name_.git"
 ```
 
 ## Docker
