@@ -2,6 +2,8 @@
 
 A GitHub Action for [mirroring a git repository](https://help.github.com/en/articles/duplicating-a-repository#mirroring-a-repository-in-another-location) to another location via SSH.
 
+Do not worry about the errors on the actions page, they show that the repos are already synced.
+
 ## Inputs
 
 ### `source-repo`
