@@ -25,7 +25,6 @@ echo "removed source directory"
 git add .
 echo "added files"
 git commit -m "auto update"
-echo "committed"
-git push origin "$BRANCH" --force
+git push origin $BRANCH --force
 echo "pushed"
 echo "done"
