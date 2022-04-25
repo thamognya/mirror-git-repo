@@ -16,6 +16,7 @@ cd "$DESTINATION_DIR"
 echo "entered directory"
 rm -rf *
 echo "removed all files"
+git checkout -b "$BRANCH_FOR_DESTINATION_REPO"
 git clone "$SOURCE_REPO" "$SOURCE_DIR"
 echo "cloned"
 mv "$SOURCE_DIR"/* .
@@ -25,6 +26,6 @@ echo "removed source directory"
 git add .
 echo "added files"
 git commit -m "auto update"
-git push origin $BRANCH --force
+git push origin $BRANCH_FOR_DESTINATION_REPO --force
 echo "pushed"
 echo "done"
