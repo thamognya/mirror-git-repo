@@ -41,6 +41,8 @@ jobs:
       - uses: ThamognyaKodi/mirror-git-repo@0.0.1
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          EMAIL: ${{ github.event.pusher.email }}
+          NAME: ${{ github.event.pusher.name }}
         with:
           source-repo: "git@_some_provider_:_user_name_/_repo_name_.git"
           destination-repo: "git@_some_provider_which_you_have_ssh_access_:_user_name_/_repo_name_.git"
