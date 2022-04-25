@@ -15,6 +15,8 @@ git config --global user.name "$NAME"
 git clone "$SOURCE_REPO" "$SOURCE_DIR" 
 cd "$SOURCE_DIR"
 git remote add destination "$DESTINATION_REPO"
+git add .
+git commit -m 'auto update'
 git push destination master --force
 
 echo "done"
