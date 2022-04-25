@@ -18,7 +18,6 @@ cd "$SOURCE_DIR"
 #git add .
 #git commit -m 'auto update'
 #git push destination master --force
-git clone --mirror "$SOURCE_REPO" "$SOURCE_DIR" && cd "$SOURCE_DIR"
 git remote set-url --push origin "$DESTINATION_REPO"
 git fetch -p origin
 # Exclude refs created by GitHub for pull request.
